@@ -5,7 +5,7 @@
 
     height: 400px;
     width: 900px;
-    background-color:whitesmoke;
+    background-color:royalblue;
     justify-content: center;
     align-items: center;
     margin-left: auto;
@@ -15,23 +15,48 @@
     height:400px;
     flex-direction: column;
     font-size:20px;
-    
+}
+
+
+label{
+    font-size: 20px;
+    font-style:arial;
+    display: block;
+    line-height: 1.6;
+}
+
+
+.div2{
+
+    height:200px;
+    width:900px;
+    background-color:royalblue;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius:20px;
+    display: flex;
+    flex-direction: column;
+    font-size:20px;
 }
 
 
 
 body{
-    color: black;
-   background-color: grey;
-   
+    color:black;
+   background-color:pink;
+
 }
 h1{
-    color: blueviolet;
+    color:black;
+    font-size:40px;
 }
 
-label{
-    display: block;
+button{
+    line-height: 1.5;
 }
+
 
 
 

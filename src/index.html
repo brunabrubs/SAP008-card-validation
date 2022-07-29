@@ -8,24 +8,25 @@
   <body align="center">
     
       <div class="div">
-        <h1>Luar</h1>
+        <h1>LuaR Validation</h1>
         <br>
         <form action="">
           
           <label for="nome">Nome</label>
 	        <input type="text" id="nome" name="nome">
-          <br>
-          <br>
           <label for="cartao">Numero do Cartão:</label>
           <input type="text" id="card_number" required>
+
         </form>
-        <br>
         <br>
       <button type="button"
 onclick="pegarCreditCardNumber()">valide seu cartão</button>
-      <h3 id="dono_do_cartao"></h3>
-      <h2 id="resultado"></h2>
-    </div>
+      </div>
+      <br>
+      <div class="div2">
+        <h3 id="dono_do_cartao"></h3>
+        <h2 id="resultado"></h2>
+      </div>
     <footer></footer>
     <script src="index.js" type="module"></script>
   </body>

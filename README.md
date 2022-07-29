@@ -4,7 +4,7 @@
 ## 1. Introdução
 LuaR Validetion é um aplicativo que valida o numero de um cartão,a validaçao é necessario para processar o pagamento de forma segura.
 
-
+![Prototipo](https://github.com/brunabrubs/SAP008-card-validation/blob/main/PrototipoInicial.png)
 
 ##### `Pesquisa ux`
 

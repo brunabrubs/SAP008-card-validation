@@ -1,72 +1,42 @@
 const validator = {
   
-  isValid(creditCardNumber) {
+  isValid: function(creditCardNumber) {
     
     creditCardNumber = creditCardNumber.replace(/ /g, "")
     
-    let somaTotal = 0;
-    let somaNaoMultiplicado = 0;
-    let numeroMultiplicado = 0;
-      //tamanho do cartao é impar
-    if(creditCardNumber.length % 2 != 0){
+    let soma = 0;
+    let digitoMultiplicado = 0;
+    
+    for(let posicao = 0; posicao < creditCardNumber.length; posicao++){
 
-      //percorer do zero ate enquanto o numero for menor que o tamanho do numero do cartao de 1 em 1 
-      for(let numero = 0; numero < creditCardNumber.length; numero++) {
-        //verificando se o numero e impar,se for impar vou multiplicar apartir da posicao impar e ver se maior q 10 
-        if(numero % 2 != 0){
+      let digitoDoCartao = Number(creditCardNumber[posicao]);
+      const ehImpar = posicao % 2 != 0;
+
+      if(ehImpar){
+
+        digitoMultiplicado = digitoDoCartao * 2; 
+
+        if(digitoMultiplicado > 9){
           
-          numeroMultiplicado = creditCardNumber[numero] * 2;
-          //se o numero for maior ou igual a 10 subtrair por 9
-          if(numeroMultiplicado >= 10) {
-            numeroMultiplicado = numeroMultiplicado - 9;
-          }
-
-          somaTotal += numeroMultiplicado;
-
-            //se a posiçao nao for impar,pegar o valor e jogar em soma total
-        }else{
-          somaNaoMultiplicado = Number(creditCardNumber[numero]);
-          somaTotal += somaNaoMultiplicado;
+          digitoMultiplicado = digitoMultiplicado - 9;
 
         }
 
+        soma += digitoMultiplicado;
+
+      }else{
+        soma += digitoDoCartao;
       }
 
-    }else{
-      for(let numero = 0; numero < creditCardNumber.length; numero++) {
-
-        if(numero % 2 == 0){
-          
-          numeroMultiplicado = creditCardNumber[numero] * 2;
-
-          if(numeroMultiplicado >= 10) {
-            numeroMultiplicado = numeroMultiplicado - 9;
-          }
-
-          somaTotal += numeroMultiplicado;
-
-            
-        }else{
-          somaNaoMultiplicado = Number(creditCardNumber[numero]);
-          somaTotal += somaNaoMultiplicado;
-
-        }
-
-      }
-      
     }
 
-    console.log("total da soma dos digitos: " + somaTotal);
-
-    if (String(somaTotal)[1] == "0") {
-      return true
-    } else {
-      return false
-    }
+    const ehCartaoValido = soma % 10 == 0;
+    return ehCartaoValido;
 
   },
 
-  maskify(creditCardNumber) {
+  maskify: function(creditCardNumber) {
+
     var quatroUltimosDigitos = creditCardNumber.substr(-4);
     var numerosMascarados = creditCardNumber.substr(0, creditCardNumber.length - 4).replace(/\w/g, '#');
     var cartaoMascarado = numerosMascarados + quatroUltimosDigitos;

@@ -7,12 +7,13 @@ const validator = {
     let soma = 0;
     let digitoMultiplicado = 0;
     
-    for(let posicao = 0; posicao < creditCardNumber.length; posicao++){
+    for(let posicao = creditCardNumber.length -1; posicao >= 0; posicao--){
 
       let digitoDoCartao = Number(creditCardNumber[posicao]);
-      const ehImpar = posicao % 2 != 0;
+      let contadorPositivo = creditCardNumber.length - posicao;
+      const ehPar = contadorPositivo % 2 == 0;
 
-      if(ehImpar){
+      if(ehPar){
 
         digitoMultiplicado = digitoDoCartao * 2; 
 
@@ -30,7 +31,7 @@ const validator = {
 
     }
 
-    const ehCartaoValido = soma % 10 == 0;
+    const ehCartaoValido = String(soma)[1] == 0;
     return ehCartaoValido;
 
   },

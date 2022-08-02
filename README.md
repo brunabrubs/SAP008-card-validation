@@ -1,4 +1,4 @@
-### LuaR Validetion
+### LuaR Validation
 
 
 ## 1. Introdução
